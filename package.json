@@ -1,0 +1,17 @@
+{
+  "name": "isolated-tests-jest-node-vitest",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "node": "NO_COLOR=1 CI=true node --experimental-strip-types --test ./node/**",
+    "deno": "NO_COLOR=1 CI=true deno test ./deno --parallel --no-check --reload",
+    "jest": "NO_COLOR=1 CI=true jest --roots jest",
+    "vitest": "NO_COLOR=1 CI=true vitest run ./vitest --pool=vmThreads"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "vitest": "^2.1.5"
+  }
+}

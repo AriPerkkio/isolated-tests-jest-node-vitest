@@ -1,0 +1,7 @@
+node_modules
+
+# Generated files
+deno/**
+jest/**
+node/**
+vitest/**
