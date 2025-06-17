@@ -7,13 +7,22 @@
 - Test isolation
 - Cold runs only
 - Preparation command before each run: `rm -rf node_modules/; pnpm i`
+- In real world projects these results don't matter much.
 
-| Test runner | Time    | Runtime version                         |
-| ----------- | ------- | --------------------------------------- |
-| `jest`      | 38.738s | Node `v22.0` to match Vitest            |
-| `vitest`    | 19.128s | Node `v22.0` due to nodejs/node#54735   |
-| `node:test` | 42.567s | Node `v22.11` due to experimental flags |
-| `deno test` | 10.466s | `v2.1.1`                                |
+Run with:
+
+```sh
+$ rm -rf node_modules
+$ pnpm install
+$ time pnpm run <command>
+```
+
+| Test runner | Time    | Runtime version |
+| ----------- | ------- | --------------- |
+| `jest`      | 22.114s | Node `v22.16.0` |
+| `vitest`    | 7.639   | Node `v22.16.0` |
+| `node:test` | 14.938s | Node `v22.16.0` |
+| `deno test` | 8.592s  | Deno `v2.3.6`   |
 
 Bun, Mocha and similar non-isolated test runners fail these test cases:
 

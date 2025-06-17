@@ -1,5 +1,5 @@
 {
-  "version": "4",
+  "version": "5",
   "specifiers": {
     "jsr:@std/assert@^1.0.8": "1.0.8",
     "jsr:@std/expect@*": "1.0.8",
@@ -26,10 +26,11 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@jest/globals@^29.7.0",
-        "npm:jest@^29.7.0",
-        "npm:ts-jest@^29.2.5",
-        "npm:vitest@^2.1.5"
+        "npm:@jest/globals@30",
+        "npm:@types/node@^24.0.3",
+        "npm:jest@30",
+        "npm:ts-jest@^29.4.0",
+        "npm:vitest@^3.2.3"
       ]
     }
   }
