@@ -20,7 +20,8 @@ $ time pnpm run <command>
 | Test runner | Time    | Runtime version |
 | ----------- | ------- | --------------- |
 | `jest`      | 22.114s | Node `v22.16.0` |
-| `vitest`    | 7.639   | Node `v22.16.0` |
+| `vitest`    | 7.639s  | Node `v22.16.0` |
+| `rstest`    | 15.704s | Node `v22.16.0` |
 | `node:test` | 14.938s | Node `v22.16.0` |
 | `deno test` | 8.592s  | Deno `v2.3.6`   |
 

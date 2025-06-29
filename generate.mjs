@@ -2,7 +2,7 @@ import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 
 const TEST_FILE_COUNT = 1000;
 
-for (const directory of ["node", "jest", "vitest", "deno"]) {
+for (const directory of ["node", "jest", "vitest", "deno", "rstest"]) {
   rmSync(directory, { recursive: true, force: true });
   mkdirSync(directory);
 }
@@ -14,6 +14,7 @@ for (const _index of Array.from({ length: TEST_FILE_COUNT }).fill().keys()) {
   writeFileSync(`./jest/example-${index}.test.ts`, jestTemplate(), "utf-8");
   writeFileSync(`./node/example-${index}.test.ts`, nodeTemplate(), "utf-8");
   writeFileSync(`./deno/example-${index}.test.ts`, denoTemplate(), "utf-8");
+  writeFileSync(`./rstest/example-${index}.test.ts`, rstestTemplate(), "utf-8");
 }
 
 function vitestTemplate() {
@@ -58,5 +59,16 @@ import { sum } from '../src/sum.ts';
 Deno.test("add function adds two numbers correctly", () => {
   expect(sum(123, 321)).toBe(444);
 });
+`;
+}
+
+function rstestTemplate() {
+  return `// Generated
+import { expect, test } from '@rstest/core';
+import { sum } from '../src/sum';
+
+test('fixture', () => {
+  expect(sum(123, 321)).toBe(444);
+})
 `;
 }

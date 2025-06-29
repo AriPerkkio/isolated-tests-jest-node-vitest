@@ -5,3 +5,4 @@ deno/**
 jest/**
 node/**
 vitest/**
+rstest/**

@@ -6,10 +6,12 @@
     "node": "NO_COLOR=1 CI=true node --experimental-strip-types --test ./node/**",
     "deno": "NO_COLOR=1 CI=true deno test ./deno --parallel --no-check --reload",
     "jest": "NO_COLOR=1 CI=true jest --roots jest",
+    "rstest": "NO_COLOR=1 CI=true rstest run ./rstest",
     "vitest": "NO_COLOR=1 CI=true vitest run ./vitest --pool=vmThreads"
   },
   "devDependencies": {
     "@jest/globals": "^30.0.0",
+    "@rstest/core": "^0.0.3",
     "@types/node": "^24.0.3",
     "jest": "^30.0.0",
     "ts-jest": "^29.4.0",
